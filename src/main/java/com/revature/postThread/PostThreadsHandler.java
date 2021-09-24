@@ -7,6 +7,10 @@ import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.revature.postThread.models.Threads;
+import com.revature.postThread.repositories.ThreadsRepo;
+
+import java.time.LocalDateTime;
 
 public class PostThreadsHandler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
@@ -26,6 +30,7 @@ public class PostThreadsHandler implements RequestHandler<APIGatewayProxyRequest
         logger.log("RECEIVED EVENT: " + requestEvent);
 
         Threads threads = mapper.fromJson(requestEvent.getBody(), Threads.class);
+        threads.setDate_created(LocalDateTime.now().toString());
 
         threadsRepo.addThreads(threads);
 
