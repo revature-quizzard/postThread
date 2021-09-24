@@ -30,10 +30,10 @@ public class Threads {
     private String description;
 
     @DynamoDBAttribute
-    private int childCount;
+    private int child_count;
 
     @DynamoDBAttribute
-    private LocalDateTime dateCreated;
+    private LocalDateTime date_created;
 
     @DynamoDBAttribute
     private String owner;
@@ -58,7 +58,7 @@ public class Threads {
         this.description = description;
         this.owner = owner;
         this.tags = tags;
-        this.childCount = 0;
-        this.dateCreated = LocalDateTime.now();
+        this.child_count = 0;
+        this.date_created = LocalDateTime.now();
     }
 }
