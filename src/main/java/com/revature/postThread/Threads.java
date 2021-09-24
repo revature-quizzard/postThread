@@ -41,6 +41,16 @@ public class Threads {
     @DynamoDBAttribute
     private List<String> tags;
 
+    /**
+     * @param subject - Thread title
+     * @param ancestors - List of ancestor node IDs of the thread
+     * @param parent - Subforum id
+     * @param description - The content of the original post in a thread
+     * @param owner - Thread creator
+     * @param tags - Thread subjects
+     *
+     * @authors - Charles Mettee, Sean Smith
+     */
     public Threads(String subject, List<String> ancestors, String parent, String description, String owner, List<String> tags) {
         this.subject = subject;
         this.ancestors = ancestors;
