@@ -1,7 +1,8 @@
-package com.revature.postThread;
+package com.revature.postThread.repositories;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.revature.postThread.models.Threads;
 
 public class ThreadsRepo {
 
