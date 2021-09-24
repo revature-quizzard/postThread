@@ -25,7 +25,7 @@ public class ThreadsService {
      * @param threads - the thread being validated
      * @return - boolean value indicating whether or not the thread is valid
      *
-     * @authors - Charles Mettee, ...
+     * @authors - Charles Mettee
      */
     public boolean isValid(Threads threads){
         if(threads.getSubject() == null || threads.getSubject().trim().equals("")){
