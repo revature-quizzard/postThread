@@ -41,4 +41,14 @@ public class Threads {
     @DynamoDBAttribute
     private List<String> tags;
 
+    public Threads(String subject, List<String> ancestors, String parent, String description, String owner, List<String> tags) {
+        this.subject = subject;
+        this.ancestors = ancestors;
+        this.parent = parent;
+        this.description = description;
+        this.owner = owner;
+        this.tags = tags;
+        this.childCount = 0;
+        this.dateCreated = LocalDateTime.now();
+    }
 }
