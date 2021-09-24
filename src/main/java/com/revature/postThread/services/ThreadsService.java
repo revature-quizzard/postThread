@@ -28,7 +28,10 @@ public class ThreadsService {
      * @authors - Charles Mettee, ...
      */
     public boolean isValid(Threads threads){
-        return true;
+        if(threads.getSubject() == null || threads.getSubject().trim().equals("")){
+            return false;
+        }
+        return false;
     }
 
 
