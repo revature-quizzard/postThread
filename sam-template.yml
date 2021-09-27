@@ -14,4 +14,4 @@ Resources:
       Timeout: 30
       Tracing: Active
       Policies:
-        - arn:aws:iam::011217676466:policy/post-thread-fx-policy
+        - arn:aws:lambda:us-east-1:857547178254:function:post-threads-fx
