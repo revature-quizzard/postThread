@@ -39,6 +39,7 @@ public class ThreadsService {
         if(threads.getSubject() == null || threads.getSubject().trim().equals("")){
             return false;
         }
+
         if(threads.getAncestors() == null || threads.getAncestors().size() != 1) {
             return false;
         }
