@@ -16,7 +16,8 @@ import java.time.LocalDateTime;
 public class PostThreadsHandler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
     private static final Gson mapper = new GsonBuilder().setPrettyPrinting().create();
-    private final ThreadsService threadsService = new ThreadsService();
+    private final ThreadsRepo threadsRepo = new ThreadsRepo();
+    private final ThreadsService threadsService = new ThreadsService(threadsRepo);
 
     /**
      * @param requestEvent

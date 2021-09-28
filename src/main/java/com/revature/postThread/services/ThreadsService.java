@@ -5,7 +5,12 @@ import com.revature.postThread.repositories.ThreadsRepo;
 
 public class ThreadsService {
 
-    private final ThreadsRepo threadsRepo = new ThreadsRepo();
+    private final ThreadsRepo threadsRepo;
+
+    public ThreadsService(ThreadsRepo threadsRepo){
+        this.threadsRepo = threadsRepo;
+    }
+
 
     /**
      * @param threads - the thread being sent to the repo for persistence to database
@@ -28,6 +33,9 @@ public class ThreadsService {
      * @author - Charles Mettee
      */
     public boolean isValid(Threads threads){
+        if(threads == null){
+            return false;
+        }
         if(threads.getSubject() == null || threads.getSubject().trim().equals("")){
             return false;
         }
