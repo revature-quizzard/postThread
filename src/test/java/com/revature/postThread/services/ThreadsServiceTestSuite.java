@@ -30,6 +30,9 @@ public class ThreadsServiceTestSuite {
         sut = null;
     }
 
+    /**
+     * author - Charles Mettee
+     */
     @Test
     public void isValid_returnsFalse_givenNullThread(){
         Threads thread = null;
@@ -39,6 +42,9 @@ public class ThreadsServiceTestSuite {
         assertFalse(testResult);
     }
 
+    /**
+     * author - Charles Mettee
+     */
     @Test
     public void isValid_returnsFalse_givenNullOrEmptySubject(){
         Threads thread1 = new Threads(null, Arrays.asList("parentId"), "parentId",
@@ -57,6 +63,9 @@ public class ThreadsServiceTestSuite {
         assertFalse(testResult3);
     }
 
+    /**
+     * author - Charles Mettee
+     */
     @Test
     public void isValid_returnsFalse_givenAncestorsNullOrNotSizeOne(){
         Threads thread1 = new Threads("subject", null, "parentId",
@@ -71,6 +80,9 @@ public class ThreadsServiceTestSuite {
         assertFalse(testResult2);
     }
 
+    /**
+     * author - Charles Mettee
+     */
     @Test
     public void isValid_returnsFalse_givenNullOrEmptyParent(){
         Threads thread1 = new Threads("subject", Arrays.asList("parentId"), null,
@@ -89,6 +101,9 @@ public class ThreadsServiceTestSuite {
         assertFalse(testResult3);
     }
 
+    /**
+     * author - Charles Mettee
+     */
     @Test
     public void isValid_returnsFalse_givenNullOrEmptyDescription(){
         Threads thread1 = new Threads("subject", Arrays.asList("parentId"), "parentId",
@@ -97,6 +112,27 @@ public class ThreadsServiceTestSuite {
                 "", "ownerId", Arrays.asList("tag1Id", "tag2Id"));
         Threads thread3 = new Threads("subject", Arrays.asList("parentId"), "parentId",
                 "     ", "ownerId", Arrays.asList("tag1Id", "tag2Id"));
+
+        boolean testResult1 = sut.isValid(thread1);
+        boolean testResult2 = sut.isValid(thread2);
+        boolean testResult3 = sut.isValid(thread3);
+
+        assertFalse(testResult1);
+        assertFalse(testResult2);
+        assertFalse(testResult3);
+    }
+
+    /**
+     * author - Charles Mettee
+     */
+    @Test
+    public void isValid_returnsFalse_givenNullOrEmptyOwner(){
+        Threads thread1 = new Threads("subject", Arrays.asList("parentId"), "parentId",
+                "description", null, Arrays.asList("tag1Id", "tag2Id"));
+        Threads thread2 = new Threads("subject", Arrays.asList("parentId"), "parentId",
+                "description", "", Arrays.asList("tag1Id", "tag2Id"));
+        Threads thread3 = new Threads("subject", Arrays.asList("parentId"), "parentId",
+                "description", "    ", Arrays.asList("tag1Id", "tag2Id"));
 
         boolean testResult1 = sut.isValid(thread1);
         boolean testResult2 = sut.isValid(thread2);
