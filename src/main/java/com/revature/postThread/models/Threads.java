@@ -49,7 +49,7 @@ public class Threads {
      * @param owner - Thread creator
      * @param tags - Thread subjects
      *
-     * @authors - Charles Mettee, Sean Smith
+     * @author - Charles Mettee, Sean Smith
      */
     public Threads(String subject, List<String> ancestors, String parent, String description, String owner, List<String> tags) {
         this.subject = subject;
