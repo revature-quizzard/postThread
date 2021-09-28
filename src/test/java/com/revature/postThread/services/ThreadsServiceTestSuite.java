@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 
 import java.util.Arrays;
@@ -141,6 +142,36 @@ public class ThreadsServiceTestSuite {
         assertFalse(testResult1);
         assertFalse(testResult2);
         assertFalse(testResult3);
+    }
+
+    /**
+     * author - Charles Mettee
+     */
+    @Test
+    public void isValid_returnsTrue_givenValidThread(){
+        Threads thread1 = new Threads("subject", Arrays.asList("parentId"), "parentId",
+                "description", "ownerId", Arrays.asList("tag1Id", "tag2Id"));
+
+        boolean testResult = sut.isValid(thread1);
+
+        assertTrue(testResult);
+    }
+
+    /**
+     * author - Charles Mettee
+     */
+    @Test
+    public void addThreads_throwsException_givenInvalidThread(){
+        Threads thread = null;
+        boolean testResult = false;
+
+        try{
+            sut.addThreads(thread);
+        } catch (Exception e){
+            testResult = true;
+        }
+
+        assertTrue(testResult);
     }
 
 }
