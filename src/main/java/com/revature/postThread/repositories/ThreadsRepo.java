@@ -5,6 +5,8 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBQueryExpression;
 import com.revature.postThread.models.Threads;
 
+import java.util.Arrays;
+
 public class ThreadsRepo {
 
     private final DynamoDBMapper dbReader;
@@ -32,7 +34,8 @@ public class ThreadsRepo {
      * @author - Sean Smith
      */
     public Threads getSubforum(String id) {
-        Threads queryItem = Threads.builder().id(id).build();
+        Threads queryItem = new Threads(null, null, null, null, null, null);
+        queryItem.setId(id);
 
         return dbReader.query(Threads.class,new DynamoDBQueryExpression<Threads>().withHashKeyValues(queryItem)).get(0);
     }
