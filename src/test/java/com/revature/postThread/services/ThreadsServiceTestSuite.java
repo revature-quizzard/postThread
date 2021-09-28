@@ -10,7 +10,7 @@ import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 import java.util.Arrays;
 
@@ -172,6 +172,23 @@ public class ThreadsServiceTestSuite {
         }
 
         assertTrue(testResult);
+    }
+
+    /**
+     * author - Charles Mettee
+     */
+    @Test
+    public void addThreads_isSuccessful_givenValidThread(){
+        Threads thread = new Threads("subject", Arrays.asList("parentId"), "parentId",
+                "description", "ownerId", Arrays.asList("tag1Id", "tag2Id"));
+        try{
+            sut.addThreads(thread);
+        } catch (Exception e){
+
+        }
+
+        verify(mockThreadsRepo, times(1)).addThreads(thread);
+
     }
 
 }
