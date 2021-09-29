@@ -1,4 +1,5 @@
 package com.revature.postThread.services;
+import com.amazonaws.services.lambda.runtime.LambdaLogger;
 import com.revature.postThread.models.Threads;
 
 import com.revature.postThread.repositories.ThreadsRepo;
@@ -19,11 +20,13 @@ public class ThreadsServiceTestSuite {
 
     ThreadsService sut;
     ThreadsRepo mockThreadsRepo;
+    LambdaLogger mockLambdaLogger;
 
     @BeforeEach
     void setUp(){
         mockThreadsRepo = mock(ThreadsRepo.class);
-        sut = new ThreadsService(mockThreadsRepo);
+        mockLambdaLogger = mock(LambdaLogger.class);
+        sut = new ThreadsService(mockThreadsRepo, mockLambdaLogger);
     }
 
     @AfterEach
