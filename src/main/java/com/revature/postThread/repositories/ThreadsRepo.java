@@ -28,7 +28,6 @@ public class ThreadsRepo {
         dbReader.save(threads);
     }
 
-
     /**
      * @param id - current Thread's id
      * @author - Sean Smith
@@ -39,6 +38,11 @@ public class ThreadsRepo {
 
         return dbReader.query(Threads.class,new DynamoDBQueryExpression<Threads>().withHashKeyValues(queryItem)).get(0);
     }
+
+    /**
+     * @param subforum - the subforum being updated
+     * @author - Sean Smith
+     */
     public void updateChild_count(Threads subforum) {
         dbReader.save(subforum);
     }

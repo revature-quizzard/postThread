@@ -23,6 +23,10 @@ public class ThreadsService {
             throw new Exception("An error occurred");
         }
 
+        Threads subforum = threadsRepo.getSubforum(threads.getParent());
+        subforum.setChild_count(subforum.getChild_count() + 1);
+        threadsRepo.updateChild_count(subforum);
+
         threadsRepo.addThreads(threads);
     }
 

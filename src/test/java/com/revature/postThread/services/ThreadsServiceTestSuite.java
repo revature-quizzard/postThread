@@ -179,8 +179,15 @@ public class ThreadsServiceTestSuite {
      */
     @Test
     public void addThreads_isSuccessful_givenValidThread(){
-        Threads thread = new Threads("subject", Arrays.asList("parentId"), "parentId",
+
+        Threads subforum = new Threads("subforumId", "Java", Arrays.asList(), "",
+                "description", 0, "2021-09-28T12:05:13.628", "ownerId", Arrays.asList("tag1Id", "tag2Id"));
+
+        Threads thread = new Threads("Recursion in Java", Arrays.asList("subforumId"), "subforumId",
                 "description", "ownerId", Arrays.asList("tag1Id", "tag2Id"));
+
+        when(mockThreadsRepo.getSubforum(any())).thenReturn(subforum);
+
         try{
             sut.addThreads(thread);
         } catch (Exception e){
@@ -188,7 +195,6 @@ public class ThreadsServiceTestSuite {
         }
 
         verify(mockThreadsRepo, times(1)).addThreads(thread);
-
     }
 
 }
