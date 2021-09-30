@@ -16,7 +16,7 @@ public class ThreadsRepo {
      * @author - Charles Mettee
      */
     public ThreadsRepo() {
-        dbReader = new DynamoDBMapper(AmazonDynamoDBClientBuilder.defaultClient());
+        this.dbReader = new DynamoDBMapper(AmazonDynamoDBClientBuilder.defaultClient());
     }
 
 
