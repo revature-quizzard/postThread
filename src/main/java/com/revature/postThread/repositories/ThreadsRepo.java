@@ -33,7 +33,7 @@ public class ThreadsRepo {
      * @author - Sean Smith
      */
     public Threads getSubforum(String id) {
-        Threads queryItem = new Threads(null, null, null, null, null, null);
+        Threads queryItem = new Threads();
         queryItem.setId(id);
 
         return dbReader.query(Threads.class,new DynamoDBQueryExpression<Threads>().withHashKeyValues(queryItem)).get(0);
