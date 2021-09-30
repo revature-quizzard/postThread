@@ -1,0 +1,4 @@
+com\revature\postThread\PostThreadsHandler.class
+com\revature\postThread\models\Threads.class
+com\revature\postThread\repositories\ThreadsRepo.class
+com\revature\postThread\services\ThreadsService.class
