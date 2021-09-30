@@ -57,14 +57,14 @@ public class Threads {
      *
      * @author - Charles Mettee, Sean Smith
      */
-    public Threads(String subject, List<String> ancestors, String parent, String description, String owner, List<String> tags) {
-        this.subject = subject;
-        this.ancestors = ancestors;
-        this.parent = parent;
-        this.description = description;
-        this.owner = owner;
-        this.tags = tags;
-        this.child_count = 0;
-        this.date_created = LocalDateTime.now().toString();
-    }
+//     public Threads(String subject, List<String> ancestors, String parent, String description, String owner, List<String> tags) {
+//         this.subject = subject;
+//         this.ancestors = ancestors;
+//         this.parent = parent;
+//         this.description = description;
+//         this.owner = owner;
+//         this.tags = tags;
+//         this.child_count = 0;
+//         this.date_created = LocalDateTime.now().toString();
+//     }
 }
