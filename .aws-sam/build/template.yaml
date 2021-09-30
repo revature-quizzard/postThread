@@ -1,9 +1,0 @@
-Resources:
-  Function:
-    Type: AWS::Serverless::Function
-    Properties:
-      Timeout: 300
-      MemorySize: 256
-      Handler: com.revature.postThread.PostThreadsHandler
-      CodeUri: Function
-      Runtime: java8.al2
