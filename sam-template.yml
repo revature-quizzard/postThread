@@ -6,7 +6,7 @@ Resources:
   PostThreadsFx:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: target/post-threads-fx-1.0-SNAPSHOT.jar
+      CodeUri: target/postThread-1.0-SNAPSHOT.jar
       Handler: com.revature.postThread.PostThreadsHandler
       Runtime: java8.al2
       Description: Java function
