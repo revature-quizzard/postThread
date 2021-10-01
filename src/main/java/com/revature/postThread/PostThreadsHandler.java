@@ -12,6 +12,8 @@ import com.revature.postThread.repositories.ThreadsRepo;
 import com.revature.postThread.services.ThreadsService;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PostThreadsHandler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
 
